@@ -1,0 +1,260 @@
+% !Mode:: "TeX:UTF-8"
+\documentclass[17pt]{beamer}
+\usepackage[adobefonts]{ctex}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{fix-cm}
+\usepackage{color}
+
+\definecolor{title}{RGB}{128,128,128}
+
+\setlength{\paperwidth}{25.4cm}
+\setlength{\paperheight}{19.05cm}
+\setlength{\textwidth}{.95\paperwidth}
+\setlength{\textheight}{\paperheight}
+
+\newcommand{\zihaopt}[2]{\fontsize{#1}{\baselineskip}\selectfont#2}
+
+\setCJKmainfont{SimSun}
+\setsansfont{Times New Roman}
+
+\setCJKfamilyfont{xinwei}{STXinwei}
+\newcommand{\xinwei}[1]{{\CJKfamily{xinwei}#1}}
+\setCJKfamilyfont{hei}{SimHei}
+\newcommand{\hei}[1]{{\CJKfamily{hei}#1}}
+
+\setbeamertemplate{navigation symbols}{}
+
+\newcommand{\tutor}[1]{\setbeamertemplate{tutor}{#1}}
+\newcommand{\sid}[1]{\setbeamertemplate{sid}{#1}}
+
+% 前言部分唯一需要修改的地方
+% 全局变量，对应第一页的内容
+\title{牛逼的毕设题目}
+\sid{牛逼的学号}
+\author{牛逼的你}
+\tutor{牛逼的导师}
+\institute{牛逼的实习单位}
+
+\setbeamertemplate{title page}{
+    \vspace{1cm}
+
+    {
+        \setlength{\extrarowheight}{2cm}
+        \begin{tabularx}{\textwidth}{@{\hspace{1.75cm}}X}
+            \textcolor{title}{\xinwei{\zihaopt{44}{本科生毕设设计答辩}}} \\
+            \bf{\textcolor{blue}{\zihaopt{28}{\inserttitle}}} \\
+        \end{tabularx}
+    }
+
+    \vspace{1.98cm}
+
+    \hei{\zihaopt{31}{
+        \setlength{\extrarowheight}{0.3cm}
+        \begin{tabularx}{\textwidth}{@{\hspace{3.2cm}}ccc}
+            \makebox[6cm]{学\hfill 号} & ： & \makebox[7cm]{\hfill \usebeamertemplate{sid} \hfill} \\
+            \makebox[6cm]{姓\hfill 名} & ： & \makebox[7cm]{\hfill \insertauthor \hfill}\\
+            \makebox[6cm]{指\hfill 导\hfill 教\hfill 师}  & ：& \makebox[7cm]{\hfill \usebeamertemplate{tutor} \hfill} \\
+            \makebox[6cm]{实\hfill 习\hfill 单\hfill 位}  & ：& \makebox[7cm]{\hfill \insertinstitute \hfill} \\
+        \end{tabularx}
+    }}
+}
+
+\setbeamertemplate{itemize items}[square]
+\setbeamertemplate{itemize subitem}[circ]
+\setbeamerfont{itemize/enumerate body}{size*={28}{\baselineskip}}
+\setbeamerfont{itemize/enumerate subbody}{size*={24}{\baselineskip}}
+
+\setbeamertemplate{section in toc}[square]
+\setbeamercolor{section in toc}{fg=black}
+\setbeamerfont{section in toc}{size*={28}{\baselineskip},series=\bfseries}
+
+\setbeamertemplate{frametitle}{\vspace{2cm}\hspace{0.8cm}\insertframetitle}
+\setbeamercolor{frametitle}{fg=blue}
+\setbeamerfont{frametitle}{size*={44}{\baselineskip},series=\bfseries}
+
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+\setbeamercolor{bibliography item}{fg=black}
+\setbeamercolor{bibliography entry author}{fg=black}
+
+
+\begin{document}
+\CTEXnoindent
+
+    \usebackgroundtemplate{
+        \includegraphics[width=\paperwidth,height=\paperheight]{pic/bg1.png}
+    } % 第一页背景 
+
+    \frame{\titlepage}
+
+    \usebackgroundtemplate{
+        \includegraphics[width=\paperwidth,height=\paperheight]{pic/bg2.png}
+    } % 其它页背景
+
+    % 提纲页，用目录方式生成
+    \begin{frame}
+        \frametitle{汇报内容}
+        \tableofcontents
+    \end{frame}
+
+    % 正文部分需要修改部分的开始，Slide的主要内容
+
+    \section{目录和页面示例} % Section名称用于生成目录
+
+    \begin{frame}
+        \frametitle{这样就是一个页面了，只有标题}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{目录和页面不是一对一关系}
+    \end{frame}
+
+    \begin{frame}[c]
+        \frametitle{垂直居中的页面}
+        \begin{itemize}
+            \item 我真的是垂直居中的
+            \item 默认值就是我
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[t]
+        \frametitle{向上对齐的页面}
+        \begin{itemize}
+            \item 我真的是向上对齐的
+            \item 而且你也可以把这两个标签用在后面介绍的分栏中
+        \end{itemize}
+    \end{frame}
+
+    \section{简单页面示例}
+
+    \begin{frame}
+        \frametitle{简单列表示例} 
+
+        \begin{itemize}
+            \item 这就是一个列表
+            \item 和列表中的一项
+            \item[] 这样就可以去掉前面的标记
+            \item
+            \item 列表的项可以是空的，就像上面一样
+            \item 可以把两个结合起来，就是一个空行了
+            \item 内容一般都用列表(小标题)显示
+            \item 最好不要有大段的话
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{简单图片示例}
+        \begin{itemize}
+            \item 一般用center环境居中，图片宽度和高度都是可调的
+            \item 这个是宽度为40\%页面宽度的
+            \item 也可以设置height，下面就是首页的背景
+        \end{itemize}
+        \begin{center}
+            \includegraphics[width=.4\paperwidth]{pic/bg1.png}
+        \end{center}
+    \end{frame}
+
+    \section{(稍)复杂页面示例} 
+    
+    \begin{frame}
+        \frametitle{嵌套列表示例}
+
+        \begin{itemize}
+            \item 这是第一层列表
+            \item 这也是第一层列表
+            \begin{itemize} 
+                \item 这是第二层列表
+                \item 这也是第二层列表
+            \end{itemize}
+            \item 这还是第一层列表
+            \begin{itemize}
+                \item 这是另一个第二层列表
+                \item 这也是另一个第二层列表
+            \end{itemize}
+            \item 怎么还是第一层列表？
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{分栏示例}
+        \begin{columns}
+
+            \column{.5\textwidth} 
+            \begin{itemize}
+                \item 这是第一栏，占行宽的50\%
+                \item 通过.5参数实现的，也可以改成其他值，如.4
+                \item 可以放列表，也可以放图片
+                \item 就像右边的其它页背景一样，默认左对齐
+                \item 可以像之前那样用center居中
+            \end{itemize}
+
+            \column{.4\textwidth}
+                \includegraphics[height=0.4\textheight]{pic/bg2.png}
+
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{带动画效果的列表}
+        \begin{itemize}
+            \item<4-> 真的是自定义的，这里就藏了一个
+            \item<1-> 这是第一个显示的
+            \begin{itemize}
+                \item<3-> 显示顺序同样适用于嵌套列表
+            \end{itemize}
+            \item<2-> 显示顺序完全是自定义的
+        \end{itemize}
+    \end{frame}
+    
+    \section{一个可能有用的HACK}
+    
+    \begin{frame}
+        \frametitle{距离的人工调整}
+        \vspace{-6cm} % 垂直距离的HACK
+        \begin{itemize}
+            \item 比如你觉得正文内容和标题离的太远
+            \item 这样就可以减少了，vspace命令是垂直距离
+            \item v 就是 vertical
+            \item 参数值可以是正的(扩大)，也可以是负的(缩小)
+            \item 水平距离，就是hspace，语法也一样
+            \item h 就是 horizontal
+        \end{itemize}
+    \end{frame}
+    
+    \section{参考文献}
+    
+    \begin{frame}
+        \frametitle{参考文献}
+        \vspace{-1.5cm}
+        \begin{thebibliography}{}
+            \bibitem[1]{1} 参考文献比较hack
+            \bibitem[2]{2} 方括号里的序号就是前面显示的序号，所以不能乱
+            \bibitem[3]{3} 大括号里的是引用标记，应该用不到，可以随便写
+            \bibitem[4]{4} 条目内容的话，直接把论文里整理好的粘贴过来就行了
+            \bibitem[5]{5} 如果有特殊符号，就要稍微注意处理一下了
+        \end{thebibliography}
+    \end{frame}
+
+    % Slide主要内容的结束
+    % 最后一页自动生成
+
+    \begin{frame}
+        \vspace{4cm}
+    
+        \bf \zihaopt{60}{
+            \begin{tabularx}{\textwidth}{c}
+                \makebox[\textwidth]{\hfill \color{blue}{敬请批评指正！} \hfill}
+            \end{tabularx}
+        }
+        
+        \vspace{1cm}
+        
+        \bf \zihaopt{24}{
+            \setlength{\extrarowheight}{-3cm}
+            \begin{tabularx}{\textwidth}{@{\hspace{6cm}}ccc}
+                \makebox[4cm]{学\hfill 号} & ： & \makebox[4cm]{\hfill \usebeamertemplate{sid} \hfill} \\
+                \makebox[4cm]{姓\hfill 名} & ： & \makebox[4cm]{\hfill \insertauthor \hfill} \\
+            \end{tabularx}
+        }
+    \end{frame}
+\end{document}
