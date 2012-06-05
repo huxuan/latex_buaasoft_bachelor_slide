@@ -4,6 +4,8 @@ The LaTeX Slide Template for Bachelor Thesis Defence of Software College in BUAA
 
 北航软院本科毕设答辩演示LaTeX模板
 
+这个高仿了学院给的PPT模板，不是官方的
+
 ## 前提需求
 
 - XeLaTeX
