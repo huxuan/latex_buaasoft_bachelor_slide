@@ -30,7 +30,7 @@ The LaTeX Slide Template for Bachelor Thesis Defence of Software College in BUAA
 
   如果你用的是linux，使用"make main"即可实现编译样例文件
 
-  使用"make my"即可实现编译我的答辩演示文档
+  使用"make myexample"即可实现编译我的答辩演示文档
 
   使用"make view"即可用evince打开编译出来的文件
 
