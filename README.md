@@ -26,6 +26,18 @@ The LaTeX Slide Template for Bachelor Thesis Defence of Software College in BUAA
 
   (不过真正展示的时候拷错版本了，一些东西没说到，悲催)
 
+- format.tex
+
+  模板格式的主要文件，包括文件类别和包的引用以及beamer样式修改
+
+- init.tex
+
+  生成演示文档的首页和目录页，并且设定背景图片
+
+- end.tex
+
+  生成演示文档的最后一页
+
 - Makefile
 
   如果你用的是linux，使用"make main"即可实现编译样例文件

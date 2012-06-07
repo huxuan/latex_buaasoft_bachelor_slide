@@ -1,0 +1,85 @@
+% !Mode:: "TeX:UTF-8"
+% +-----------------------------------------------------------------------------
+% | File: format
+% | Author: huxuan
+% | E-mail: i(at)huxuan.org
+% | Created: 2012-06-07
+% | Last modified: 2012-06-07
+% | Description:
+% |     The format file for slide
+% |
+% | Copyrgiht (c) 2012 by huxuan. All rights reserved.
+% | License GPLv3
+% +-----------------------------------------------------------------------------
+\documentclass[17pt]{beamer}
+\usepackage[adobefonts]{ctex}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{fix-cm}
+\usepackage{color}
+
+\definecolor{title}{RGB}{128,128,128}
+
+\setlength{\paperwidth}{25.4cm}
+\setlength{\paperheight}{19.05cm}
+\setlength{\textwidth}{.95\paperwidth}
+\setlength{\textheight}{\paperheight}
+
+\newcommand{\zihaopt}[2]{\fontsize{#1}{\baselineskip}\selectfont#2}
+
+\setCJKmainfont{SimSun}
+\setsansfont{Times New Roman}
+
+\setCJKfamilyfont{xinwei}{STXinwei}
+\newcommand{\xinwei}[1]{{\CJKfamily{xinwei}#1}}
+\setCJKfamilyfont{hei}{SimHei}
+\newcommand{\hei}[1]{{\CJKfamily{hei}#1}}
+
+\setbeamertemplate{navigation symbols}{}
+
+\newcommand{\tutor}[1]{\setbeamertemplate{tutor}{#1}}
+\newcommand{\sid}[1]{\setbeamertemplate{sid}{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{title page}{
+    \vspace{1cm}
+
+    {
+        \setlength{\extrarowheight}{2cm}
+        \begin{tabularx}{\textwidth}{@{\hspace{1.75cm}}X}
+            \textcolor{title}{\xinwei{\zihaopt{44}{本科生毕设设计答辩}}} \\
+            \bf{\textcolor{blue}{\zihaopt{28}{\inserttitle}}} \\
+        \end{tabularx}
+    }
+
+    \vspace{1.98cm}
+
+    \hei{\zihaopt{31}{
+        \setlength{\extrarowheight}{0.3cm}
+        \begin{tabularx}{\textwidth}{@{\hspace{3.2cm}}ccc}
+            \makebox[6cm]{学\hfill 号} & ： & \makebox[7cm]{\hfill \usebeamertemplate{sid} \hfill} \\
+            \makebox[6cm]{姓\hfill 名} & ： & \makebox[7cm]{\hfill \insertauthor \hfill}\\
+            \makebox[6cm]{指\hfill 导\hfill 教\hfill 师}  & ：& \makebox[7cm]{\hfill \usebeamertemplate{tutor} \hfill} \\
+            \makebox[6cm]{实\hfill 习\hfill 单\hfill 位}  & ：& \makebox[7cm]{\hfill \insertinstitute \hfill} \\
+        \end{tabularx}
+    }}
+}
+
+\setbeamertemplate{itemize items}[square]
+\setbeamertemplate{itemize subitem}[circ]
+\setbeamerfont{itemize/enumerate body}{size*={28}{\baselineskip}}
+\setbeamerfont{itemize/enumerate subbody}{size*={24}{\baselineskip}}
+
+\setbeamertemplate{section in toc}[square]
+\setbeamercolor{section in toc}{fg=black}
+\setbeamerfont{section in toc}{size*={28}{\baselineskip},series=\bfseries}
+
+\setbeamertemplate{frametitle}{\vspace{2cm}\hspace{0.8cm}\insertframetitle}
+\setbeamercolor{frametitle}{fg=blue}
+\setbeamerfont{frametitle}{size*={44}{\baselineskip},series=\bfseries}
+
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+\setbeamercolor{bibliography item}{fg=black}
+\setbeamercolor{bibliography entry author}{fg=black}
+

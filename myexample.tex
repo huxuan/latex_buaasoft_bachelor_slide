@@ -1,115 +1,41 @@
 % !Mode:: "TeX:UTF-8"
-\documentclass[17pt]{beamer}
-\usepackage[adobefonts]{ctex}
-\usepackage{graphicx}
-\usepackage{tabularx}
-\usepackage{fix-cm}
-\usepackage{color}
+% +-----------------------------------------------------------------------------
+% | File: myexample
+% | Author: huxuan
+% | E-mail: i(at)huxuan.org
+% | Created: 2012-06-07
+% | Last modified: 2012-06-07
+% | Description:
+% |     My Example of the slide
+% |
+% | Copyrgiht (c) 2012 by huxuan. All rights reserved.
+% | License GPLv3
+% +-----------------------------------------------------------------------------
+\include{format}
 
-\definecolor{title}{RGB}{128,128,128}
-
-\setlength{\paperwidth}{25.4cm}
-\setlength{\paperheight}{19.05cm}
-\setlength{\textwidth}{.95\paperwidth}
-\setlength{\textheight}{\paperheight}
-
-\newcommand{\zihaopt}[2]{\fontsize{#1}{\baselineskip}\selectfont#2}
-
-\setCJKmainfont{SimSun}
-\setsansfont{Times New Roman}
-
-\setCJKfamilyfont{xinwei}{STXinwei}
-\newcommand{\xinwei}[1]{{\CJKfamily{xinwei}#1}}
-\setCJKfamilyfont{hei}{SimHei}
-\newcommand{\hei}[1]{{\CJKfamily{hei}#1}}
-
-\setbeamertemplate{navigation symbols}{}
-
-\newcommand{\tutor}[1]{\setbeamertemplate{tutor}{#1}}
-\newcommand{\sid}[1]{\setbeamertemplate{sid}{#1}}
-
-% 需要修改的全局变量
 \title{数学公式检索系统的设计与实现}
 \sid{38211214}
 \author{扈\quad 煊}
 \tutor{杜孝平}
 \institute{北大计算机所}
 
-\setbeamertemplate{title page}{
-    \vspace{1cm}
-
-    {
-        \setlength{\extrarowheight}{2cm}
-        \begin{tabularx}{\textwidth}{@{\hspace{1.75cm}}X}
-            \textcolor{title}{\xinwei{\zihaopt{44}{本科生毕设设计答辩}}} \\
-            \bf{\textcolor{blue}{\zihaopt{28}{\inserttitle}}} \\
-        \end{tabularx}
-    }
-
-    \vspace{1.98cm}
-
-    \hei{\zihaopt{31}{
-        \setlength{\extrarowheight}{0.3cm}
-        \begin{tabularx}{\textwidth}{@{\hspace{3.2cm}}ccc}
-            \makebox[6cm]{学\hfill 号} & ： & \makebox[7cm]{\hfill \usebeamertemplate{sid} \hfill} \\
-            \makebox[6cm]{姓\hfill 名} & ： & \makebox[7cm]{\hfill \insertauthor \hfill}\\
-            \makebox[6cm]{指\hfill 导\hfill 教\hfill 师}  & ：& \makebox[7cm]{\hfill \usebeamertemplate{tutor} \hfill} \\
-            \makebox[6cm]{实\hfill 习\hfill 单\hfill 位}  & ：& \makebox[7cm]{\hfill \insertinstitute \hfill} \\
-        \end{tabularx}
-    }}
-}
-
-\setbeamertemplate{itemize items}[square]
-\setbeamertemplate{itemize subitem}[circ]
-\setbeamerfont{itemize/enumerate body}{size*={28}{\baselineskip}}
-\setbeamerfont{itemize/enumerate subbody}{size*={24}{\baselineskip}}
-
-\setbeamertemplate{section in toc}[square]
-\setbeamercolor{section in toc}{fg=black}
-\setbeamerfont{section in toc}{size*={28}{\baselineskip},series=\bfseries}
-
-\setbeamertemplate{frametitle}{\vspace{2cm}\hspace{0.8cm}\insertframetitle}
-\setbeamercolor{frametitle}{fg=blue}
-\setbeamerfont{frametitle}{size*={44}{\baselineskip},series=\bfseries}
-
-\setbeamertemplate{bibliography item}{\insertbiblabel}
-\setbeamercolor{bibliography item}{fg=black}
-\setbeamercolor{bibliography entry author}{fg=black}
-
-
 \begin{document}
 \CTEXnoindent
 
-    \usebackgroundtemplate{
-        \includegraphics[width=\paperwidth,height=\paperheight]{pic/bg1.png}
-    } % 第一页背景 
+    \include{init}
 
-    \frame{\titlepage}
-
-    \usebackgroundtemplate{
-        \includegraphics[width=\paperwidth,height=\paperheight]{pic/bg2.png}
-    } % 其它页背景
-
-    % 提纲页，用目录方式生成
-    \begin{frame}
-        \frametitle{汇报内容}
-        \tableofcontents
-    \end{frame}
-
-    % Slide主要内容的开始
-
-    \section{背景、意义与研究现状} % Section名称用于生成目录 
+    \section{背景、意义与研究现状}
     
     \begin{frame}
-        \frametitle{背景、意义与研究现状} % 标题
-        \begin{columns} % 分栏
-            \pause % 暂停，实现动画效果
+        \frametitle{背景、意义与研究现状}
+        \begin{columns}
+            \pause
 
-            \column{.5\textwidth} % 第一栏    
-            \begin{itemize} % 列表
+            \column{.5\textwidth}
+            \begin{itemize}
                 \item 基于文本检索
                 \item 基于树状结构的检索
-                \begin{itemize} % 列表嵌套(子列表)
+                \begin{itemize}
                     \item 基于替代树索引
                     \item 基于路径索引
                 \end{itemize}
@@ -135,7 +61,7 @@
         \frametitle{相关原理与技术}
         
         \begin{itemize}
-          \item<2-> 搜索引擎 % 箭括号实现显示顺序的动画
+          \item<2-> 搜索引擎
           \item<4-> MathML
           \begin{itemize}
             \item<4-> Content MathML
@@ -147,7 +73,7 @@
 
     \begin{frame}
         \frametitle{相关原理与技术 --- MathML(1)}
-        \begin{center} % 图片，居中
+        \begin{center}
             \includegraphics[width=0.8\textwidth]{pic/mathml1.png}
         \end{center}
     \end{frame}
@@ -163,13 +89,13 @@
     
     \begin{frame}
         \frametitle{系统设计}
-        \vspace{-5cm} % 垂直距离的HACK
+        \vspace{-5cm}
         \begin{columns}
             \column{0.5\textwidth}
                 \begin{center}
                     \begin{itemize}
                         \item 黑色为离线部分
-                        \item[] 索引建立 % 实现没有标记的列表项
+                        \item[] 索引建立
                         \item 蓝色为在线部分
                         \item[] 查询处理
                     \end{itemize}
@@ -304,7 +230,7 @@
     \begin{frame}
         \frametitle{参考文献}
         \vspace{-1.5cm}
-        \begin{thebibliography}{} % 参考文献，目前未支持bib，直接拷贝原文，方括号中的序号即为显示的序号
+        \begin{thebibliography}{}
             \bibitem[1]{1} W. B. Croft, D. Metzler, T. Strohman. Search Engines: Information Retrieval in Practice [M]. USA: Addison-Wesley Publishing Company, 2009, 1-552.
             \bibitem[2]{2} A. Ron, B. Stephen, C. David, et al. Mathematical Markup Language (MathML) Version 3.0 [R]. W3C Recommendation , World Wide Web Consortium (W3C) 2010.
             \bibitem[3]{3} P. Sojka, M. Lí?ka. The Art of Mathematics Retrieval [A]. the 11th ACM Symposium on Document Engineering (DocEng '11) [C]. New York, USA: ACM, 2011: 57-60.
@@ -348,26 +274,6 @@
         \end{thebibliography}
     \end{frame}
 
-    % Slide主要内容的结束
-    % 最后一页自动生成
+    \include{end}
 
-    \begin{frame}
-        \vspace{4cm}
-    
-        \bf \zihaopt{60}{
-            \begin{tabularx}{\textwidth}{c}
-                \makebox[\textwidth]{\hfill \color{blue}{敬请批评指正！} \hfill}
-            \end{tabularx}
-        }
-        
-        \vspace{1cm}
-        
-        \bf \zihaopt{24}{
-            \setlength{\extrarowheight}{-3cm}
-            \begin{tabularx}{\textwidth}{@{\hspace{6cm}}ccc}
-                \makebox[4cm]{学\hfill 号} & ： & \makebox[4cm]{\hfill \usebeamertemplate{sid} \hfill} \\
-                \makebox[4cm]{姓\hfill 名} & ： & \makebox[4cm]{\hfill \insertauthor \hfill} \\
-            \end{tabularx}
-        }
-    \end{frame}
 \end{document}
